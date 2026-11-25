@@ -3,10 +3,14 @@ import type { ReactNode } from 'react'
 import { business } from '../../config/business'
 import { cn } from '../../lib/cn'
 import { useClock } from '../../lib/motion'
+import { hash } from '../../lib/random'
 
 const L = business.hero.labels
 const W = business.workspace
 const label = (i: number) => L[i % L.length]!
+const H = hash(business.slug)
+/** Per-site KPI values so no two forecast visuals show the same numbers. */
+const KPI = [62 + (H % 33), 3 + ((H >> 5) % 24), 71 + ((H >> 9) % 27)]
 
 /** A window frame used by every hero visual. */
 export function Frame({ title, children, className, status }: { title: string; children: ReactNode; className?: string; status?: string }) {
@@ -119,7 +123,7 @@ function Forecast() {
         {L.slice(0, 3).map((l, i) => (
           <div key={l} className="rounded-ctl bg-raised/70 px-2.5 py-2">
             <p className="truncate text-[0.62rem] text-faint">{l}</p>
-            <p className="display text-lg text-ink">{[78, 12, 94][i]}{['%', '', '%'][i]}</p>
+            <p className="display text-lg text-ink">{KPI[i]}{['%', '', '%'][i]}</p>
           </div>
         ))}
       </div>
@@ -233,7 +237,7 @@ function Inventory() {
   const cols = L.slice(0, 5)
   return (
     <Frame title="allocation/plan">
-      <div className="flex h-44 items-end gap-3 px-1">
+      <div className="flex h-44 items-stretch gap-3 px-1">
         {cols.map((c, i) => {
           const a = 30 + (((n + i) * 37) % 60)
           const b = 15 + (((n + i * 3) * 19) % 35)
@@ -329,7 +333,8 @@ function Redaction() {
 function Feedback() {
   const n = useClock(1500)
   const themes = L.slice(0, 4)
-  const comments = W.findings.evidence.map((e) => e.replace(/\{[^}]+\}/g, '…'))
+  // Labels after the first four are sample comments; otherwise fall back to the evidence templates.
+  const comments = L.length > 5 ? L.slice(4) : W.findings.evidence.map((e) => e.replace(/\{[^}]+\}/g, '…'))
   return (
     <Frame title="themes/clustering">
       <div className="relative h-24 overflow-hidden">
@@ -377,7 +382,7 @@ function Ledger() {
         })}
       </div>
       <div key={n % 3} className="mt-4 flex animate-fade-up items-center justify-between rounded-ctl border border-accent/25 bg-accent/8 px-3 py-2 text-xs">
-        <span className="flex items-center gap-1.5 text-ink"><Sparkles className="h-3.5 w-3.5 text-accent" /> Invoice extracted · {cats[n % cats.length]}</span>
+        <span className="flex items-center gap-1.5 text-ink"><Sparkles className="h-3.5 w-3.5 text-accent" /> {W.importSample.sourceLabel} read · {cats[n % cats.length]}</span>
         <span className="font-mono text-accent">₦{(184 + (n % 7) * 23).toLocaleString()}k</span>
       </div>
     </Frame>

@@ -5,7 +5,7 @@ import { cn } from '../../lib/cn'
 
 type Variant = 'primary' | 'secondary' | 'ghost'
 
-const base = 'group inline-flex items-center justify-center gap-2 rounded-ctl text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50'
+const base = 'group inline-flex items-center justify-center gap-2 rounded-btn text-sm font-medium transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50'
 const sizes = { md: 'px-5 py-2.5', lg: 'px-6 py-3.5 text-[0.95rem]', sm: 'px-3 py-1.5 text-xs' }
 const variants: Record<Variant, string> = {
   primary: 'bg-accent text-on-accent shadow-[0_10px_30px_-12px_var(--color-accent)] hover:brightness-110 hover:shadow-[0_16px_40px_-14px_var(--color-accent)] hover:-translate-y-0.5',
