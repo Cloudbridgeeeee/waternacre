@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="r" cx="0.8" cy="0" r="0.9"><stop offset="0" stop-color="#0a7f9c" stop-opacity=".35"/><stop offset="1" stop-color="#eef6f8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#eef6f8"/>
+  <rect width="1200" height="630" fill="url(#r)"/>
+  <g transform="translate(80 90) scale(1.4)"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a7f9c"/><stop offset="1" stop-color="#16b3a6"/></linearGradient></defs><path d="M32 4C32 4 10 28 10 41a22 22 0 0 0 44 0C54 28 32 4 32 4Z" fill="url(#g)"/><circle cx="25" cy="42" r="6" fill="#f0a33b" opacity=".8"/></g>
+  <text x="190" y="150" font-family="Lexend, Georgia, serif" font-size="54" font-weight="600" fill="#0d2530">WaterNacre</text>
+  <text x="80" y="330" font-family="Lexend, Georgia, serif" font-size="72" font-weight="600" fill="#0d2530">Organized water</text>
+  <text x="80" y="414" font-family="Lexend, Georgia, serif" font-size="72" font-weight="600" fill="#0d2530">infrastructure</text>
+  <text x="80" y="498" font-family="Lexend, Georgia, serif" font-size="72" font-weight="600" fill="#0d2530">maintenance.</text>
+  <text x="80" y="560" font-family="monospace" font-size="24" fill="#0a7f9c" letter-spacing="4">WATER UTILITIES  ·  CIVIL ENGINEERING  ·  ENTERPRISE SOFTWARE</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "WaterNacre",
+  "short_name": "WaterNacre",
+  "description": "AI maintenance record intelligence that helps water infrastructure operators classify inspection reports and understand recurring maintenance concerns.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef6f8",
+  "theme_color": "#eef6f8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
