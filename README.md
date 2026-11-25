@@ -9,7 +9,7 @@ Marketing website and interactive product demonstration for WaterNacre.
 - Industry: Water Utilities, Civil Engineering, Enterprise Software
 - Founder: Daniel Okechukwu (Founder & CEO)
 - Co-founder: Oluwatoyin Aremu (Co-founder & CTO)
-- Contact: daniel@waternacre.top
+- Contact: daniel@waternacre.site
 - Business model: Infrastructure portfolio subscriptions
 
 ## Stack
